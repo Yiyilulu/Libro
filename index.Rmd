@@ -1,6 +1,6 @@
 --- 
-title: "Libro de Yiyilulú"
-author: "Ligia avellaneda"
+title: "Caminos de Esperanza"
+author: "Ligia Avellaneda"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -12,7 +12,9 @@ github-repo: rstudio/bookdown-demo
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-# Prerequisites
+# Prefacio
+
+Este es un espacio para hacer el prefacio.
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
 
