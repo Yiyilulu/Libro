@@ -1,0 +1,98 @@
+https://happygitwithr.com/
+
+
+Intall R
+Install R Studio
+Install Bookdown
+Create github account Yiyilulu - ligiaavellaneda@gmail.com (Key: BGMrWaGy1819)
+Install Git https://git-for-windows.github.io/
+Introduce Yourself to GIT: 
+	- In R istall package 'usethis' in R: 
+		install.packages("usethis")
+		library(usethis)
+		use_git_config(user.name = "Ligia Avellaneda", user.email = "ligiaavellaneda@gmail.com")
+	- In Git Bash run next command to check if previous command is working!
+		git config --global --list
+Configure GIT editor:
+	- Install Notepad++
+	- In Git Bash
+		git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+Download and Install GIT Client: https://www.gitkraken.com/ (connected with github account!)
+	
+Test the installation
+	- Create a repo in gitHub: myrepo
+	- In Git bash go to temp folder: (cd temp)
+	- In Git bash: git clone https://github.com/yiyilulu/myrepo.git
+	- Test it in git:
+		cd myrepo
+		ls
+		head README.md
+		git remote show origin
+	- Make a local change, commit and push
+		echo "A line I wrote on my local computer" >> README.md
+		git status
+		git add -A
+		git commit -m "A commit from my local computer"
+		git push
+
+Check line endings in Git bash:
+	git config --show-origin --get core.autocrlf  
+	#If previous command shows false, run git config --global core.autocrlf true
+
+- Save user and password for git commint and push (HTTP)
+	It is possible this was done automatically by the Windows Credential Manager, the first time you use dis a 'git commit' or 'git push'
+	- Reveal the configurarion in Git bash:
+		git config --show-origin --get credential.helper
+	- Inside a local (folder) repo you can test if githup repo is setup as remote
+		cd myrepo
+		git remote -v
+		git branch -vv
+	- Check if local master branch is tracing github master branch
+	- Check if Git is new enough to have a credential helper (need to be equal or above 1.7.10)
+		git --version #Liyita case: 2.27.0
+	- Again a change to save username and password
+		echo "adding a line" >> README.md
+		git add -A
+		git commit -m "A 3 commit from my local computer"
+		git push -u origin master
+		git push
+
+- Clone the github repository via Rstudio
+	- In Rstudio
+		File > New Project > Version Control > Git
+		Repository URL: https://github.com/yiyilulu/myrepo.git
+		Be aware the folder where the project wil be cloned!!
+		This will create the Rstudio project conected to gitHub
+- Make changes in Rstudio and use the Git tab to Commit and Push!!
+
+
+***
+Creating the book for Yiyita
+
+- Get a bookdown template and copy it to local files
+	https://bookdown.org/yihui/bookdown/get-started.html
+	https://github.com/rstudio/bookdown-demo/archive/master.zip
+	- Change name of project (libro.Rproj)
+	- Launch it in Rstudio
+- Install TinyTex in Windows: https://yihui.org/tinytex/  (look for installation and get install-windows.bat and run it)
+- Install rmarkdown in Rstudio
+- Install TinyTex in Rstudio
+
+The location of the book is: C:\Libro\
+
+***
+Configure the Personal Access Token - PAT
+usethis::browse_github_pat()
+	8c0bda3e67a34f4007c6351341b816692934c787
+	git: https://github.com/ on DESKTOP-3DRRH3V at 07-jun.-2020 16:03
+usethis::edit_r_environ()
+	GITHUB_PAT=8c0bda3e67a34f4007c6351341b816692934c787
+usethis::git_sitrep()  #to check the PAT
+
+***
+With the Rproject create the githup repo
+- Open the Rproject C:\Libro\Libro.Rproj
+- usethis::use_git()
+- usethis::use_github()
+- Commint everything 
+
